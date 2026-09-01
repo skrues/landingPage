@@ -82,14 +82,14 @@ window.addEventListener("scroll", () => {
 
 // ================= CONTACT FORM =================
 
-const contactForm = document.querySelector("#contact-form");
+// const contactForm = document.querySelector("#contact-form");
 
-contactForm.addEventListener("submit", (e) => {
+// contactForm.addEventListener("submit", (e) => {
 
-    e.preventDefault();
+//     e.preventDefault();
 
-    alert("Message sent successfully!");
+//     alert("Message sent successfully!");
 
-    contactForm.reset();
+//     contactForm.reset();
 
-});
+// });
