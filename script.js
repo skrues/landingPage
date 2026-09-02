@@ -82,14 +82,29 @@ window.addEventListener("scroll", () => {
 
 // ================= CONTACT FORM =================
 
-// const contactForm = document.querySelector("#contact-form");
+const contactForm = document.querySelector("#contact-form");
 
-// contactForm.addEventListener("submit", (e) => {
+contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-//     e.preventDefault();
+    const formData = new FormData(contactForm);
 
-//     alert("Message sent successfully!");
+    try {
+        const response = await fetch(contactForm.action, {
+            method: "POST",
+            body: formData
+        });
 
-//     contactForm.reset();
+        const data = await response.json();
 
-// });
+        if (data.success) {
+            alert("Message sent successfully!");
+            contactForm.reset();
+        } else {
+            alert("Something went wrong. Please try again.");
+        }
+
+    } catch (error) {
+        alert("Something went wrong. Please try again.");
+    }
+});
